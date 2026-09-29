@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://c0qxip03fx3fk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5kaes"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_tcc0e"]
+material = SubResource("StandardMaterial3D_5kaes")
+size = Vector3(100, 1, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ufkec"]
+albedo_color = Color(0.66224295, 0.91941637, 0.26654726, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gyc6d"]
+size = Vector3(10, 0.5, 10)
+
+[node name="Node3D" type="Node3D" unique_id=1609481160]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1560890204]
+mesh = SubResource("BoxMesh_tcc0e")
+surface_material_override/0 = SubResource("StandardMaterial3D_ufkec")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=936474638]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1195188642]
+shape = SubResource("BoxShape3D_gyc6d")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=487544151]
+shadow_enabled = true
+shadow_bias = 0.255
